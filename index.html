@@ -1,60 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="design/style.css">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
 </head>
+
 <body>
-<div class="container">
-  <nav>
-    <img id="left" src="images/logo.svg" alt="logo">
-    <img id="right" src="images/icon-menu.svg" alt="menu">
- <div class="main-dropdown">
-   <select  name="">
-     <select class="" name="">
-       Features
-     </select>
-     <select class="" name="">
-       Company
-     </select>
-     <a href="#">Careers</a>
-     <a href="#">About</a>
-     <button type="button" name="button">Login</button>
-     <button type="button" name="button">Register</button>
-   </select>
- </div>
-  </nav>
+  <div class="container">
+    <div class="desktop-navbar">
 
-  <img class="mobile-hero-img"src="images/image-hero-mobile.png" alt="mobile-hero-pic">
-  <div class="main-div">
-    <h1>Make remote work</h1>
+      <img class="logo-desktop" src="images/logo.svg" alt="logo">
 
-    <p class="paragraph">Get your team in sync, no matter your location. Streamline processes,
-    create team rituals, and watch productivity soar.</p>
+      <div class="features-disp">
+        <a onmouseover="disp_features_desk()" class="features-pos" href="#">Features<img id="hide_down_arrow_desk" class="arrow-down" src="images/icon-arrow-down.svg" alt=""><img id="disp_up_arrow_desk" style="display: none; padding-left:5px;" src="images/icon-arrow-up.svg" alt=""></a>
+        <div id="disp_feat_desk" style="display: none;" class="features-data">
+          <a class="link1" href="#"><img class="icon-1" src="images/icon-todo.svg" alt="todolist">Todo List</a>
+          <a class="link2" href="#"><img class="icon-2" src="images/icon-calendar.svg" alt="calendar">Calendar</a>
+          <a class="link3" href="#"><img class="icon-3" src="images/icon-reminders.svg" alt="reminders">Reminder</a>
+          <a class="link4" href="#"><img class="icon-4" src="images/icon-planning.svg" alt="planning">Planning</a>
+        </div>
+      </div>
 
-<button class="learn-more"name="button">Learn More</button>
-<div class="client-div">
-  <img class="client-images"src="images/client-databiz.svg" alt="img1">
-  <img class="client-images"src="images/client-audiophile.svg" alt="img2 ">
-  <img class="client-images"src="images/client-meet.svg" alt="img3">
-  <img class="client-images"src="images/client-maker.svg" alt="img4">
-</div>
+      <div class="company-disp">
+        <a onmouseover="disp_company_data_desk()" class="company-pos" href="#">Company<img id="arrow_down_desk" class="arrow-down" src="images/icon-arrow-down.svg" alt=""><img id="arrow_up_desk"style="display:none; padding-left:5px;" src="images/icon-arrow-up.svg" alt=""></a>
+        <div id="disp_comp_data_desk" style="display:none;" class="company-data">
+          <a class="link" href="#">History</a>
+          <a class="link" href="#">Our Team</a>
+          <a class="link" href="#">Blog</a>
+        </div>
+      </div>
+
+      <a class="career-pos" href="#">Careers</a>
+      <a class="about-pos" href="#">About</a>
+
+      <a class="login-link">Login</a>
+      <button class="register-btn" name="button">Register</button>
+    </div>
+
+    <nav class="mobile-navbar">
+      <img class="logo" src="images/logo.svg" alt="logo">
+
+      <div class="dropdown">
+        <img onclick="disp()" class="menu" src="images/icon-menu.svg" alt="menu">
+
+        <div id="disp-content" class="dropdown-content">
+          <img onclick="hide()" class="icon-close-menu" src="images/icon-close-menu.svg" alt="icon-close-menu">
+
+          <div class="features-disp">
+            <a onclick="disp_features()" class="features-pos" href="#">Features<img id="hide_down_arrow" class="arrow-down" src="images/icon-arrow-down.svg" alt=""><img id="disp_up_arrow" style="display: none; padding-left: 10px;"
+                src="images/icon-arrow-up.svg" alt=""></a>
+            <div id="disp_feat" style="display: none;" class="features-data">
+              <a class="link1" href="#"><img class="icon-1" src="images/icon-todo.svg" alt="">Todo List</a>
+              <a class="link2" href="#"><img class="icon-2" src="images/icon-calendar.svg" alt="">Calendar</a>
+              <a class="link3" href="#"><img class="icon-3" src="images/icon-reminders.svg" alt="">Reminders</a>
+              <a class="link4" href="#"><img class="icon-4" src="images/icon-planning.svg" alt="">Planning</a>
+            </div>
+          </div>
+
+          <div class="company-disp">
+            <a onclick="disp_company_data()" class="company-pos" href="#">Company<img id="arrow_down"class="arrow-down" src="images/icon-arrow-down.svg" alt=""><img id="arrow_up"class="arrow-up" style="display:none;" src="images/icon-arrow-up.svg" alt=""></a>
+            <div id="disp_comp_data" style="display: none;" class="company-data">
+              <a class="link" href="#">History</a>
+              <a class="link" href="#">Our Team</a>
+              <a class="link" href="#">Blog</a>
+            </div>
+          </div>
+
+          <a class="career-pos" href="#">Careers</a>
+          <a class="about-pos" href="#">About</a>
+
+
+          <a class="login-link-mob">Login</a>
+          <button class="register-btn" name="button">Register</button>
+        </div>
+      </div>
+    </nav>
+
+    <img class="mobile-hero-img" src="images/image-hero-mobile.png" alt="mobile-hero-pic">
+    <img class="desktop-hero-img" src="images/image-hero-desktop.png" alt="desktop-hero-pic">
+    <div class="main-div">
+      <h1>Make remote work</h1>
+
+      <p class="paragraph">Get your team in sync, no matter your location. Streamline processes,
+        create team rituals, and watch productivity soar.</p>
+
+      <button class="learn-more" name="button">Learn more</button>
+      <div class="client-div">
+        <img class="databiz" src="images/client-databiz.svg" alt="img1">
+        <img class="audiophile" src="images/client-audiophile.svg" alt="img2 ">
+        <img class="meet" src="images/client-meet.svg" alt="img3">
+        <img class="maker" src="images/client-maker.svg" alt="img4">
+      </div>
+    </div>
 
   </div>
+  <script>
+  /* Mobile view functioning */
+    let disp = () => {
+      document.getElementById('disp-content').style.display = "block";
+    }
+    let hide = () => {
+      document.getElementById('disp-content').style.display = "none";
+    }
 
-</div>
+    let disp_features = () => {
+      //To display and hide features data
+      let dis_feat_data = document.getElementById('disp_feat');
+      if (dis_feat_data.style.display == "none")
+        dis_feat_data.style.display = "block";
+      else if (dis_feat_data.style.display == "block") {
+        dis_feat_data.style.display = "none";
+      }
+      //To switch between up and down arrows
+      let up_arrow = document.getElementById('disp_up_arrow');
+      let down_arrow = document.getElementById('hide_down_arrow');
+      if (up_arrow.style.display == "none") {
+        up_arrow.style.display = "inline-block";
+        down_arrow.style.display = "none";
+      } else if (up_arrow.style.display == "inline-block") {
+        up_arrow.style.display = "none";
+        down_arrow.style.display = "inline-block";
+      }
+    }
+    let disp_company_data = () => {
+      let dis_com_data = document.getElementById('disp_comp_data');
+      if (dis_com_data.style.display == "none")
+        dis_com_data.style.display = "block";
+      else if (dis_com_data.style.display == "block") {
+        dis_com_data.style.display = "none";
+      }
+      let upArrow = document.getElementById('arrow_up');
+      let downArrow = document.getElementById('arrow_down');
+      if (upArrow.style.display == "none") {
+        upArrow.style.display = "inline-block";
+        downArrow.style.display = "none";
+      } else if (upArrow.style.display == "inline-block") {
+        upArrow.style.display = "none";
+        downArrow.style.display = "inline-block";
+      }
+    }
+/* Desktop View functioning */
+let disp_features_desk = () => {
+  //To display and hide features data
+  let dis_feat_data = document.getElementById('disp_feat_desk');
+  if (dis_feat_data.style.display == "none")
+    dis_feat_data.style.display = "block";
+  else if (dis_feat_data.style.display == "block") {
+    dis_feat_data.style.display = "none";
+  }
+  //To switch between up and down arrows
+  let up_arrow = document.getElementById('disp_up_arrow_desk');
+  let down_arrow = document.getElementById('hide_down_arrow_desk');
+  if (up_arrow.style.display == "none") {
+    up_arrow.style.display = "inline-block";
+    down_arrow.style.display = "none";
+  } else if (up_arrow.style.display == "inline-block") {
+    up_arrow.style.display = "none";
+    down_arrow.style.display = "inline-block";
+  }
+}
+let disp_company_data_desk = () => {
+  let dis_com_data = document.getElementById('disp_comp_data_desk');
+  if (dis_com_data.style.display == "none")
+    dis_com_data.style.display = "block";
+  else if (dis_com_data.style.display == "block") {
+    dis_com_data.style.display = "none";
+  }
+  let upArrow = document.getElementById('arrow_up_desk');
+  let downArrow = document.getElementById('arrow_down_desk');
+  if (upArrow.style.display == "none") {
+    upArrow.style.display = "inline-block";
+    downArrow.style.display = "none";
+  } else if (upArrow.style.display == "inline-block") {
+    upArrow.style.display = "none";
+    downArrow.style.display = "inline-block";
+  }
+}
+  </script>
 </body>
+
 </html>

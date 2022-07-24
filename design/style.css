@@ -491,7 +491,7 @@ a:hover {
   /*    Main Div    */
   .main-div {
     width: 43%;
-    height: 75vh;
+    height: 59vh;
     padding: 15px;
     margin: 65px 20px 50px 125px;
     display: inline-block;
@@ -523,6 +523,7 @@ a:hover {
   .databiz {
     width: 105px;
     height: 20px;
+    margin-left:140px;
   }
 
   .audiophile {

@@ -27,12 +27,12 @@ body {
 }
 
 .dropdown-content {
+  background: hsl(0, 0%, 98%);
   display: none;
   height: 100%;
   width: 70%;
-  margin-left: 112px;
-  margin-top: 0;
-  background: hsl(0, 0%, 98%);
+  top: 0;
+  right: 0;
   position: absolute;
   z-index: 1;
 }

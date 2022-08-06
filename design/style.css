@@ -35,6 +35,7 @@ body {
   right: 0;
   position: absolute;
   z-index: 1;
+  overflow:hidden;
 }
 
 .icon-close-menu {
